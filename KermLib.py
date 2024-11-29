@@ -26,11 +26,12 @@ class KermLib():
 
         return simplified_string
     
-    def user_input(self, user_input, list_of_permitted_inputs): # only returns a value if its in a list. List must only contain strings
+    def get_user_input(self, list_of_permitted_inputs): # only returns a value if its in a list. List must only contain strings
         while True:
+            user_input = str(input())
             if user_input not in list_of_permitted_inputs:
                 print('Input not recognized. Please try again:')
-                user_input = str(input())
+                continue
             else:
                 return user_input
             
@@ -45,3 +46,5 @@ KermLib = KermLib('2024.11.28.2000.alpha')
 print(KermLib.version)
 
 KermLib.ascii_run()
+
+KermLib.get_user_input(['a', 'b', 'c'])
