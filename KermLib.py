@@ -11,13 +11,21 @@ class KermLib():
     def __init__(self, version):
         self.version = version
 
-    def text_extraction(self, complex_string): # removes special characters and converts sentence to simple text
+    def text_extraction(self, complex_string): # removes special characters and converts sentence to simple lowercase text
+        new_string_list = []
+        new_string_list_words_joined = []
+        complex_string = complex_string.lower()
         complex_string_list = complex_string.split()
         for word in complex_string_list:
-            word_list = [char for char in word if char in alphabet]
+            new_string = [char for char in word if char in alphabet]
+            new_string_list.append(new_string)
+        print(new_string_list)
+        for sub_list in new_string_list:
+            joined_sub_list = ''.join(sub_list)
+            new_string_list_words_joined.append(joined_sub_list)
+        simplified_string = ' '.join(new_string_list_words_joined)
+        return simplified_string
 
 
 
 KermLib = KermLib('2024.11.28.1835.alpha')
-
-print(KermLib.text_extraction('-what() |does| /the\ @fox? !say!'))
