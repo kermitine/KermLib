@@ -23,10 +23,20 @@ class KermLib():
             joined_sub_list = ''.join(sub_list)
             new_string_list_words_joined.append(joined_sub_list)
         simplified_string = ' '.join(new_string_list_words_joined)  # joins each list back into a string
-        
+
         return simplified_string
+    
+    def user_input(self, user_input, list_of_permitted_inputs): # only returns a value if its in a list. List must only contain strings
+        while True:
+            if user_input not in list_of_permitted_inputs:
+                print('Input not recognized. Please try again:')
+                user_input = str(input())
+            else:
+                return user_input
+
 
 
 KermLib = KermLib('2024.11.28.1915.alpha')
 
 print(KermLib.version)
+
