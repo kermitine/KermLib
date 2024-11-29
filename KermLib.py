@@ -38,11 +38,14 @@ class KermLib():
         print(ascii_kermitine_portrait)
         print(ascii_kermitine)
 
-    def object_matcher(self, principal_object, list_of_target_objects, target_attribute): # matches 2 objects based on a shared attribute
-        for object in list_of_target_objects:                                        # ATTRIBUTE MUST BE STR
+    def object_matcher(self, principal_object, list_of_potential_objects, target_attribute): # matches 2 objects based on a shared attribute
+        for object in list_of_potential_objects:                                        # ATTRIBUTE MUST BE STR
             if getattr(object, target_attribute) == getattr(principal_object, target_attribute):
                 return principal_object, object
         return 'no matching objects found'
+    
+
+
             
             
 KermLib = KermLib('2024.11.28.2000.alpha')
