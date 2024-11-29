@@ -1,5 +1,5 @@
 # personal library that features word/sentence processing, and more
-
+from vars.ascii import *
 
 alphabet = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
              'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
@@ -33,10 +33,15 @@ class KermLib():
                 user_input = str(input())
             else:
                 return user_input
+            
+    def ascii_run(self):
+        print(ascii_kermitine_portrait)
+        print(ascii_kermitine)
 
 
 
-KermLib = KermLib('2024.11.28.1915.alpha')
+KermLib = KermLib('2024.11.28.2000.alpha')
 
 print(KermLib.version)
 
+KermLib.ascii_run()
