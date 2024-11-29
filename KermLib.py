@@ -23,7 +23,6 @@ class KermLib():
             joined_sub_list = ''.join(sub_list)
             new_string_list_words_joined.append(joined_sub_list)
         simplified_string = ' '.join(new_string_list_words_joined)  # joins each list back into a string
-
         return simplified_string
     
     def get_user_input(self, list_of_permitted_inputs): # only returns a value if its in a list. List must only contain strings
@@ -39,12 +38,11 @@ class KermLib():
         print(ascii_kermitine_portrait)
         print(ascii_kermitine)
 
-
-
+    def object_matcher(self, principal_object, list_of_target_objects, target_attribute): # matches 2 objects based on a shared attribute
+        for object in list_of_target_objects:                                        # ATTRIBUTE MUST BE STR
+            if getattr(object, target_attribute) == getattr(principal_object, target_attribute):
+                return principal_object, object
+        return 'no matching objects found'
+            
+            
 KermLib = KermLib('2024.11.28.2000.alpha')
-
-print(KermLib.version)
-
-KermLib.ascii_run()
-
-KermLib.get_user_input(['a', 'b', 'c'])
