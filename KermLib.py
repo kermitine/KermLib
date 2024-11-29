@@ -23,6 +23,7 @@ class KermLib():
             joined_sub_list = ''.join(sub_list)
             new_string_list_words_joined.append(joined_sub_list)
         simplified_string = ' '.join(new_string_list_words_joined)  # joins each list back into a string
+        
         return simplified_string
 
 
